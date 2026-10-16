@@ -1,0 +1,9 @@
+# File hasil kompilasi Java
+*.class
+
+# Folder hasil build
+out/
+target/
+
+# Pengaturan lokal VS Code
+.vscode/
