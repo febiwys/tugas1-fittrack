@@ -27,10 +27,16 @@ public class TesFitTrack {
         Member member4 = new Member(
             "Dina Rahma", "084567890123", "04-10-2026"
         );
+        // Menguji construktor dengan data tidak valid
+        System.out.println("\n=== UJI CONSTRUCTOR ===");
+
+        Member member5 = new Member(
+            "", "12345", "", "Gold"
+        );
 
         // Menyimpan seluruh objek dalam array
         Member[] daftarMember = {
-            member1, member2, member3, member4
+            member1, member2, member3, member4, member5
         };
 
         // Menguji penolakan nomor telepon yang tidak valid
