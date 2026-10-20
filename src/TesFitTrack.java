@@ -71,8 +71,7 @@ public class TesFitTrack {
         //Menguji penolakan tanggal kosong
         System.out.println("\n=== UJI VALIDASI TANGGAL ===");
 
-        String tanggalSebelum =
-        member3.getTanggalDaftar();
+        String tanggalSebelum = member3.getTanggalDaftar();
         member3.setTanggalDaftar("");
 
         System.out.println(
