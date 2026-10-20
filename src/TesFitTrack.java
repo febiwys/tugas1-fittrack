@@ -52,6 +52,25 @@ public class TesFitTrack {
         // Menguji penolakan nama kosong
         member2.setNama("   ");
 
+        //Menguji penolakan tanggal kosong
+        System.out.println("\n=== UJI VALIDASI TANGGAL ===");
+        member3.setTanggalDaftar("");
+        //Memastikan tanggal lama tetap dipertahankan
+        System.out.println(
+            "Tanggal member3 setelah pengujian: "
+            + member3.getTanggalDaftar()
+        );
+
+        //Menguji penolakan paket yang tidak valid
+        System.out.println("\n=== UJI VALIDASI PAKET ===");
+        member4.setJenisPaket("Gold");
+
+        //Memastikan paket lama tetap dipertahankan
+        System.out.println(
+            "Paket member4 setelah pengujian: "
+            + member4.getJenisPaket()
+        );
+
         // Mencetak seluruh member dengan perulangan for
         System.out.println("\n=== DAFTAR MEMBER FITTRACK ===");
 
