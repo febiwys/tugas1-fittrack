@@ -70,22 +70,40 @@ public class TesFitTrack {
 
         //Menguji penolakan tanggal kosong
         System.out.println("\n=== UJI VALIDASI TANGGAL ===");
+
+        String tanggalSebelum =
+        member3.getTanggalDaftar();
         member3.setTanggalDaftar("");
-        //Memastikan tanggal lama tetap dipertahankan
+
         System.out.println(
-            "Tanggal member3 setelah pengujian: "
+            "Tanggal setelah pengujian: "
             + member3.getTanggalDaftar()
         );
 
-        //Menguji penolakan paket yang tidak valid
+        if (tanggalSebelum.equals(member3.getTanggalDaftar())) {
+            System.out.println(
+                "BERHASIL: tanggal lama tetap dipertahankan."
+            );    
+        } else {
+            System.out.println("GAGAL: tanggal berubah.");
+        }
+
+        //Menguji penolakan paket tidak valid
         System.out.println("\n=== UJI VALIDASI PAKET ===");
+        String paketSebelum = member4.getJenisPaket();
         member4.setJenisPaket("Gold");
 
-        //Memastikan paket lama tetap dipertahankan
         System.out.println(
-            "Paket member4 setelah pengujian: "
-            + member4.getJenisPaket()
+            "Paket setelah pengujian: " + member4.getJenisPaket()
         );
+
+        if (paketSebelum.equals(member4.getJenisPaket())) {
+            System.out.println(
+                "BERHASIL: paket lama tetap dipertahankan."
+            );
+        } else {
+            System.out.println("GAGAL: paket berubah.");
+        }
 
         // Mencetak seluruh member dengan perulangan for
         System.out.println("\n=== DAFTAR MEMBER FITTRACK ===");
