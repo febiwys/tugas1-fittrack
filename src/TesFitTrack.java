@@ -40,8 +40,24 @@ public class TesFitTrack {
         };
 
         // Menguji penolakan nomor telepon yang tidak valid
-        System.out.println("=== UJI VALIDASI ===");
+        System.out.println("=== UJI VALIDASI TELEPON ===");
+
+        String teleponSebelum = member1.getNoTelepon();
         member1.setNoTelepon("12345");
+
+        System.out.println(
+            "Nomor sebelum pengujian : " + teleponSebelum
+        );
+        System.out.println(
+            "Nomor setelah pengujian: " +
+            member1.getNoTelepon()
+        );
+        
+        if (teleponSebelum.equals(member1.getNoTelepon())) {
+            System.out.println("BERHASIL: nomor lama tetap dipertahankan.");
+        } else {
+            System.out.println("GAGAL: nomor telepon berubah.");
+        }
 
         // Memastikan nomor lama tetap dipertahankan
         System.out.println(
