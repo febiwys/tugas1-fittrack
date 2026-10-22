@@ -35,8 +35,13 @@ Buka terminal di folder utama proyek, kemudian jalankan:
 javac -d out src/Member.java src/TesFitTrack.java
 java -cp out TesFitTrack
 
-Pengujian
-
+Pengujian:
+pembuatan member dengan constructor empat parameter
+penggunaan constructor tiga parameter dengan paket Basic secara cdefault
+penolakan nama, nomor telepon, tanggal pendaftaran, dan jenis paket yang tidak valid.
+pemertahanan nilai sebelumnya ketika setter menerima data tidak valid
+penampilan seluruh data member menggunakan perulangan for
+program dapat dikompilasi dan dijalankan menggunakan perintah pada bagian Cara Menjalankan
 Program menguji pembuatan member, penggunaan constructor default Basic, validasi input, serta penolakan data tidak valid.
 
 Author
