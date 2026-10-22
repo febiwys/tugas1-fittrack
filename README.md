@@ -44,6 +44,11 @@ penampilan seluruh data member menggunakan perulangan for
 program dapat dikompilasi dan dijalankan menggunakan perintah pada bagian Cara Menjalankan
 Program menguji pembuatan member, penggunaan constructor default Basic, validasi input, serta penolakan data tidak valid.
 
+Structur Kode:
+Member.java: Mneyimpan data member, menyediakan constructor, getter, setter, validasi, dan reresentasi data melalui toString().
+TesFitTrack.java: Menjalankan pengujian constructor, validasi data, serta menampilkan daftar member.
+.gitignore: Mengecualikan file hasil kompilasi dan folder build dari Git.
+
 Author
 
 Nama: Zahra Febi Maharani
