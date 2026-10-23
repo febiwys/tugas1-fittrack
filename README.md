@@ -64,6 +64,15 @@ Skenario Pengujian:
 5. Mengubah jenis paket menjadi Gold untuk memastikan paket lama tetap dipertahankan
 6. Menggunakan constructor tiga parameter untuk memastikan paket Basic digunakan secara default
 
+
+Alur Menjalankan Program:
+1. Buka folder proyek FitTrack di Visual Studio code
+2. Buka terminal pada folder utama proyek
+3. Kompilasi kedua file Java dengan perintah:
+kavac -d out src/Mmeber.java src/TesFitTrack.java
+4. Jlanakan program dengaan perintah:
+java -cp out TesFitTrack
+5. Periksa pesan validasi dan daftar member yang ditampilkan pada terminal
 Author
 
 Nama: Zahra Febi Maharani
