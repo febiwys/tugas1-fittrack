@@ -56,6 +56,14 @@ Tanggal pendaftaran tidak boleh kosong
 Jenis paket hanya menerima Basic, Premium, atau VIP
 Jika data tidak valid, nilai sebelumnya tetap dipertahankan dan pesan penolakan ditampilkan.
 
+Skenario Pengujian:
+1. Membuat member dengan data valid untuk memastikan data tersimpan dengan benar.
+2. Mmebuat member dengan data tidak valid untuk memastikan nilai default tetap dipertahankan.
+3. Mengubah nomor telepon dengan format tidak valid untuk memastikan nomor lama tidak berubah
+4. Mengubah tanggal pendaftaran menjadi ksoong untuk memastikan tanggal lama tetaap dipertahankan
+5. Mengubah jenis paket menjadi Gold untuk memastikan paket lama tetap dipertahankan
+6. Menggunakan constructor tiga parameter untuk memastikan paket Basic digunakan secara default
+
 Author
 
 Nama: Zahra Febi Maharani
