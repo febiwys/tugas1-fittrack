@@ -49,6 +49,13 @@ Member.java: Mneyimpan data member, menyediakan constructor, getter, setter, val
 TesFitTrack.java: Menjalankan pengujian constructor, validasi data, serta menampilkan daftar member.
 .gitignore: Mengecualikan file hasil kompilasi dan folder build dari Git.
 
+Aturan Validasi:
+Nama member tidak boleh kosong atau hanya berisi spasi
+Nomor telepon harus diawali angka 0, memiliki minimal 10 digit, dan hanya berisi angka
+Tanggal pendaftaran tidak boleh kosong
+Jenis paket hanya menerima Basic, Premium, atau VIP
+Jika data tidak valid, nilai sebelumnya tetap dipertahankan dan pesan penolakan ditampilkan.
+
 Author
 
 Nama: Zahra Febi Maharani
