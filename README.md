@@ -73,6 +73,13 @@ kavac -d out src/Mmeber.java src/TesFitTrack.java
 4. Jlanakan program dengaan perintah:
 java -cp out TesFitTrack
 5. Periksa pesan validasi dan daftar member yang ditampilkan pada terminal
+
+Batasan Program:
+Program dijalankan melalui terminal damn belum menggunakan antarmuka grafis
+Data member disimpan selama program berjalan dan belum menggunakan database
+Validasi nomor tete;pn memeriksa awalan angka 0, panjang minimal 10 digit, dan karakter angka.
+Validasi tanggal hanya memastikan data tidak kosong, belum memeriksa format tanggal secara khusus.
+
 Author
 
 Nama: Zahra Febi Maharani
