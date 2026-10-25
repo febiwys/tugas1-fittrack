@@ -55,6 +55,7 @@ Nomor telepon harus diawali angka 0, memiliki minimal 10 digit, dan hanya berisi
 Tanggal pendaftaran tidak boleh kosong
 Jenis paket hanya menerima Basic, Premium, atau VIP
 Jika data tidak valid, nilai sebelumnya tetap dipertahankan dan pesan penolakan ditampilkan.
+Data sebelumnya tetap dipertahankan apabila perubahan ditolak oleh validasi
 
 Skenario Pengujian:
 1. Membuat member dengan data valid untuk memastikan data tersimpan dengan benar.
