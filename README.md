@@ -64,6 +64,16 @@ Skenario Pengujian:
 5. Mengubah jenis paket menjadi Gold untuk memastikan paket lama tetap dipertahankan
 6. Menggunakan constructor tiga parameter untuk memastikan paket Basic digunakan secara default
 
+Programk diuji menggunakan beberapa kondisi berikut:
+1. Mmebuat member dengan data valid
+2. Membuat member menggunakan constructor dengan tiga parameter
+3. Menguji penolakan nama kosong atau hanya berisi spasi
+4. Menguji penolakan nomor telepon yang tidak valid
+5. Menguji penolakan tanggal daftar kosong
+6. Menguji penolakan jenis paket yang tidak tersedia
+7. Memastikan data sebelumnya tetap tersimpannketika perubahan data ditolak
+8. Menanpilkan seluruh data member setekah pengujian
+
 
 Alur Menjalankan Program:
 1. Buka folder proyek FitTrack di Visual Studio code
