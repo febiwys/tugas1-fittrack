@@ -91,7 +91,17 @@ Data member disimpan selama program berjalan dan belum menggunakan database
 Validasi nomor tete;pn memeriksa awalan angka 0, panjang minimal 10 digit, dan karakter angka.
 Validasi tanggal hanya memastikan data tidak kosong, belum memeriksa format tanggal secara khusus.
 
-Author
+Interprestasi Pengujian 
+Pengujian dinyatakan berhasil apabila:
+1. Data member valid dapat dibuat dan ditampilkan
+2. Constructor tiga parameter menggunakan paket basic secara defauolt
+3. Input yang tidak valid ditolak
+4. Data sebelumnya tidak berubah ketika setter menerima input yang tidak valid
+5. Member dengan data awal tidak valid menggunakan nilai default untuk atribut yang gagal vaalidasi
 
+Pesan kesalahn ditampilkan diterminal agar pengguna dapat mengetahui alasan input ditolak
+
+
+Author
 Nama: Zahra Febi Maharani
 NPM: 250810701100006
