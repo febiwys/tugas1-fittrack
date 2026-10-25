@@ -42,6 +42,16 @@ public class TesFitTrack {
         // Menguji penolakan nomor telepon yang tidak valid
         System.out.println("=== UJI VALIDASI TELEPON ===");
 
+        String teleponValid = member1.getNoTelepon();
+        member1.setNoTelepon("08123ABC789");
+
+        System.out.println("Nomor sebelum: " + teleponValid);
+        System.out.println("Nomor sesudah: " + member1.getNoTelepon());
+
+        if (teleponValid.equals(member1.getNoTelepon())) {
+         System.out.println("Tes nomor berhuruf berhasil.");
+       }
+
         String teleponSebelum = member1.getNoTelepon();
         member1.setNoTelepon("12345");
 
