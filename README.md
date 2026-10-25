@@ -101,6 +101,10 @@ Pengujian dinyatakan berhasil apabila:
 
 Pesan kesalahn ditampilkan diterminal agar pengguna dapat mengetahui alasan input ditolak
 
+Tanggung Jawab Class
+1. Member.java menyimpan data member, menyediakan constructor, getter, setter, serta memvalidasi perubahan data
+2. TesFitTrack.java menjalankan pengujian constructor, validasi input, dan menampilkan daftar member
+
 
 Author
 Nama: Zahra Febi Maharani
