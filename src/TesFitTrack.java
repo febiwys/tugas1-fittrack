@@ -49,7 +49,7 @@ public class TesFitTrack {
         System.out.println("Nomor sesudah: " + member1.getNoTelepon());
 
         if (teleponValid.equals(member1.getNoTelepon())) {
-         System.out.println("Tes nomor berhuruf berhasil.");
+         System.out.println("Tes nomor kurang dari 10 digit berhasil.");
        }
 
         String teleponSebelum = member1.getNoTelepon();
