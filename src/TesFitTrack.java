@@ -1,6 +1,7 @@
 /**
  * Menguji fitur sistem keanggotaan gym FitTrack.
  */
+import java.util.Scanner;
 public class TesFitTrack {
 
     /**
@@ -182,5 +183,30 @@ public class TesFitTrack {
         System.out.println("Paket Basic: " + jumlahBasic);
         System.out.println("Paket Premium: " + jumlahVIP);
         System.out.println("Paket lainnya: " + jumlahLainnya);
+
+        System.out.println("\n=== PENCARIAN MEMBER FITTRACK ===");
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Masukkan nama member: ");
+        String namaCari = input.nextLine().trim();
+
+        boolean ditemukan = false;
+
+        for (int i = 0; i < daftarMember.length; i++) {
+            if (daftarMember[i].getNama() != null 
+                   && daftarMember[i].getNama().equalsIgnoreCase(namaCari)) {
+
+                    System.out.println("Member ditemukan!");
+                    System.out.println(daftarMember[i]);
+                    ditemukan = true;
+                    break;
+                   }
+        }
+         if (!ditemukan) {
+            System.out.println("Member tidak ditemukan.");
+
+         }
+         input.close();
     }
 }
