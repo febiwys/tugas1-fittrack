@@ -155,9 +155,32 @@ public class TesFitTrack {
 
         // Mencetak seluruh member dengan perulangan for
         System.out.println("\n=== DAFTAR MEMBER FITTRACK ===");
-
         for (int i = 0; i < daftarMember.length; i++) {
             System.out.println(daftarMember[i]);
         }
+        System.out.println("\n == RINGKASAN MEMBER FITTRACK ===");
+        int jumlahBasic = 0;
+        int jumlahPremium = 0;
+        int jumlahVIP = 0;
+        int jumlahLainnya = 0;
+
+        for (int i = 0; i < daftarMember.length; i++) {
+            String paket = daftarMember[i].getJenisPaket();
+
+            if ("Basic".equals(paket)){
+                jumlahBasic++;
+            } else if ("Premium".equals(paket)) {
+                jumlahPremium++;
+            } else if ("VIP".equals(paket)) {
+                jumlahVIP++;
+            } else {
+                jumlahLainnya++;
+            }
+        }
+
+        System.out.println("Total member: " + daftarMember.length);
+        System.out.println("Paket Basic: " + jumlahBasic);
+        System.out.println("Paket Premium: " + jumlahVIP);
+        System.out.println("Paket lainnya: " + jumlahLainnya);
     }
 }
