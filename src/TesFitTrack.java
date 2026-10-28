@@ -40,10 +40,17 @@ public class TesFitTrack {
         System.out.println("Hasil constructor dengan data tidak valid:");
         System.out.println(member5);
 
-        // Menyimpan objek dalam array (cukup satu kali)
+        // Menyimpan objek dalam array
         Member[] daftarMember = {
             member1, member2, member3, member4, member5
         };
+
+        // Mengatur status pembayaran
+        member1.setSudahBayar(true);
+        member2.setSudahBayar(false);
+        member3.setSudahBayar(true);
+        member4.setSudahBayar(false);
+        member5.setSudahBayar(false);
 
         // Uji kelengkapan data
         System.out.println("\n=== UJI KELENGKAPAN DATA MEMBER ===");
@@ -66,7 +73,9 @@ public class TesFitTrack {
         System.out.println("Nomor sesudah: " + member1.getNoTelepon());
 
         if (teleponValid.equals(member1.getNoTelepon())) {
-            System.out.println("BERHASIL: nomor yang mengandung huruf ditolak.");
+            System.out.println(
+                "BERHASIL: nomor yang mengandung huruf ditolak."
+            );
         } else {
             System.out.println("GAGAL: nomor telepon berubah.");
         }
@@ -79,7 +88,9 @@ public class TesFitTrack {
         System.out.println("Nomor sesudah: " + member1.getNoTelepon());
 
         if (teleponSebelum.equals(member1.getNoTelepon())) {
-            System.out.println("BERHASIL: nomor lama tetap dipertahankan.");
+            System.out.println(
+                "BERHASIL: nomor lama tetap dipertahankan."
+            );
         } else {
             System.out.println("GAGAL: nomor telepon berubah.");
         }
@@ -109,7 +120,9 @@ public class TesFitTrack {
         System.out.println("Tanggal sesudah: " + member3.getTanggalDaftar());
 
         if (tanggalSebelum.equals(member3.getTanggalDaftar())) {
-            System.out.println("BERHASIL: tanggal lama tetap dipertahankan.");
+            System.out.println(
+                "BERHASIL: tanggal lama tetap dipertahankan."
+            );
         } else {
             System.out.println("GAGAL: tanggal berubah.");
         }
@@ -137,7 +150,9 @@ public class TesFitTrack {
         System.out.println("Paket sesudah: " + member4.getJenisPaket());
 
         if (paketSebelumKedua.equals(member4.getJenisPaket())) {
-            System.out.println("BERHASIL: format paket yang tidak sesuai ditolak.");
+            System.out.println(
+                "BERHASIL: format paket yang tidak sesuai ditolak."
+            );
         } else {
             System.out.println("GAGAL: paket berubah.");
         }
@@ -179,21 +194,62 @@ public class TesFitTrack {
         System.out.println("Paket VIP: " + jumlahVIP);
         System.out.println("Paket lainnya: " + jumlahLainnya);
 
+        // Menampilkan biaya paket
         System.out.println("\n=== BIAYA PAKET MEMBER ===");
 
-        int totalPendapatan = 0;
+        int totalEstimasi = 0;
 
         for (int i = 0; i < daftarMember.length; i++) {
-        int biaya = daftarMember[i].getBiayaPaket();
+            int biaya = daftarMember[i].getBiayaPaket();
 
-        System.out.println(
-        daftarMember[i].getNama()
-        + " - Rp" + biaya);
+            System.out.println(
+                daftarMember[i].getNama() + " - Rp" + biaya
+            );
 
-        totalPendapatan += biaya;
+            totalEstimasi += biaya;
         }
 
-        System.out.println("Total estimasi pendapatan: Rp" + totalPendapatan);
+        System.out.println(
+            "Total estimasi biaya seluruh member: Rp" + totalEstimasi
+        );
+
+        // Rekap status pembayaran
+        System.out.println("\n=== STATUS PEMBAYARAN MEMBER ===");
+
+        int jumlahLunas = 0;
+        int jumlahBelumLunas = 0;
+        int totalPembayaran = 0;
+
+        for (Member member : daftarMember) {
+            if (!member.isDataLengkap()) {
+                continue;
+            }
+
+            String status;
+
+            if (member.isSudahBayar()) {
+                status = "LUNAS";
+                jumlahLunas++;
+                totalPembayaran += member.getBiayaPaket();
+            } else {
+                status = "BELUM LUNAS";
+                jumlahBelumLunas++;
+            }
+
+            System.out.println(
+                member.getNama()
+                + " - " + member.getJenisPaket()
+                + " - Rp" + member.getBiayaPaket()
+                + " - " + status
+            );
+        }
+
+        System.out.println("\n=== REKAP PEMBAYARAN ===");
+        System.out.println("Member lunas: " + jumlahLunas);
+        System.out.println("Member belum lunas: " + jumlahBelumLunas);
+        System.out.println(
+            "Total pembayaran diterima: Rp" + totalPembayaran
+        );
 
         // Menggunakan satu Scanner untuk semua input
         Scanner input = new Scanner(System.in);

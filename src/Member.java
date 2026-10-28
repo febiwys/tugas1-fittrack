@@ -14,6 +14,7 @@ public class Member {
     private String noTelepon;
     private String tanggalDaftar;
     private String jenisPaket;
+    private boolean sudahBayar;
 
     /**
      * Membuat member dengan empat data.
@@ -29,6 +30,7 @@ public class Member {
         this.noTelepon = TELEPON_DEFAULT;
         this.tanggalDaftar = TANGGAL_DEFAULT;
         this.jenisPaket = PAKET_DEFAULT;
+        this.sudahBayar = false;
 
         setNama(nama);
         setNoTelepon(noTelepon);
@@ -47,18 +49,10 @@ public class Member {
         this(nama, noTelepon, tanggalDaftar, PAKET_DEFAULT);
     }
 
-    /**
-     * Mengambil nama member.
-     * @return nama member
-     */
     public String getNama() {
         return nama;
     }
 
-    /**
-     * Mengatur nama jika tidak kosong.
-     * @param nama nama baru
-     */
     public void setNama(String nama) {
         if (nama != null && !nama.trim().isEmpty()) {
             this.nama = nama.trim();
@@ -67,18 +61,10 @@ public class Member {
         }
     }
 
-    /**
-     * Mengambil nomor telepon.
-     * @return nomor telepon member
-     */
     public String getNoTelepon() {
         return noTelepon;
     }
 
-    /**
-     * Mengatur nomor telepon jika valid.
-     * @param noTelepon nomor telepon baru
-     */
     public void setNoTelepon(String noTelepon) {
         if (noTelepon != null
                 && noTelepon.startsWith("0")
@@ -93,18 +79,10 @@ public class Member {
         }
     }
 
-    /**
-     * Mengambil tanggal pendaftaran.
-     * @return tanggal pendaftaran
-     */
     public String getTanggalDaftar() {
         return tanggalDaftar;
     }
 
-    /**
-     * Mengatur tanggal pendaftaran jika tidak kosong.
-     * @param tanggalDaftar tanggal pendaftaran baru
-     */
     public void setTanggalDaftar(String tanggalDaftar) {
         if (tanggalDaftar != null && !tanggalDaftar.trim().isEmpty()) {
             this.tanggalDaftar = tanggalDaftar.trim();
@@ -113,18 +91,10 @@ public class Member {
         }
     }
 
-    /**
-     * Mengambil jenis paket.
-     * @return jenis paket member
-     */
     public String getJenisPaket() {
         return jenisPaket;
     }
 
-    /**
-     * Mengatur paket jika sesuai pilihan.
-     * @param jenisPaket paket baru
-     */
     public void setJenisPaket(String jenisPaket) {
         if ("Basic".equals(jenisPaket)
                 || "Premium".equals(jenisPaket)
@@ -138,43 +108,64 @@ public class Member {
     }
 
     /**
+     * Memeriksa apakah data member sudah terisi lengkap.
+     *
+     * @return true jika seluruh data member terisi
+     */
+    public boolean isDataLengkap() {
+        return nama != null && !nama.trim().isEmpty()
+            && noTelepon != null && !noTelepon.trim().isEmpty()
+            && tanggalDaftar != null && !tanggalDaftar.trim().isEmpty()
+            && jenisPaket != null && !jenisPaket.trim().isEmpty();
+    }
+
+    /**
+     * Mengambil biaya berdasarkan jenis paket member.
+     *
+     * @return biaya paket dalam rupiah
+     */
+    public int getBiayaPaket() {
+        if ("Basic".equals(jenisPaket)) {
+            return 100000;
+        } else if ("Premium".equals(jenisPaket)) {
+            return 200000;
+        } else if ("VIP".equals(jenisPaket)) {
+            return 300000;
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * Memeriksa status pembayaran member.
+     *
+     * @return true jika sudah membayar
+     */
+    public boolean isSudahBayar() {
+        return sudahBayar;
+    }
+
+    /**
+     * Mengatur status pembayaran member.
+     *
+     * @param sudahBayar true jika sudah membayar
+     */
+    public void setSudahBayar(boolean sudahBayar) {
+        this.sudahBayar = sudahBayar;
+    }
+
+    /**
      * Menampilkan seluruh data member dalam bentuk teks.
-     * @return data member dengan label yang jelas
+     *
+     * @return data member
      */
     @Override
     public String toString() {
         return "Nama: " + nama
                 + ", Nomor Telepon: " + noTelepon
                 + ", Tanggal Daftar: " + tanggalDaftar
-                + ", Jenis Paket: " + jenisPaket;
+                + ", Jenis Paket: " + jenisPaket
+                + ", Status Pembayaran: "
+                + (sudahBayar ? "LUNAS" : "BELUM LUNAS");
     }
-
-    /**
- * Memeriksa apakah data member sudah terisi lengkap.
- *
- * @return true jika seluruh data member terisi
- */
-public boolean isDataLengkap() {
-    return nama != null && !nama.trim().isEmpty()
-        && noTelepon != null && !noTelepon.trim().isEmpty()
-        && tanggalDaftar != null && !tanggalDaftar.trim().isEmpty()
-        && jenisPaket != null && !jenisPaket.trim().isEmpty();
-  }
-
-  /**
- * Mengambil biaya berdasarkan jenis paket member.
- *
- * @return biaya paket dalam rupiah
- */
-public int getBiayaPaket() {
-    if ("Basic".equals(jenisPaket)) {
-        return 100000;
-    } else if ("Premium".equals(jenisPaket)) {
-        return 200000;
-    } else if ("VIP".equals(jenisPaket)) {
-        return 300000;
-    } else {
-        return 0;
-    }
-}
 }
