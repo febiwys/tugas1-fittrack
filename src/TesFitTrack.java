@@ -208,5 +208,31 @@ public class TesFitTrack {
 
          }
          input.close();
+
+         System.out.println("\n=== FILTER MEMBER BERDASARKAN PAKET ===");
+
+         Scanner inputPaket = new Scanner(System.in);
+
+         System.out.println("Masukkan paket (Basic/Premium/VIP): ");
+         String paketCari = inputPaket.nextLine().trim();
+
+         boolean paketDitemukan = false;
+
+         for(int i = 0; i < daftarMember.length; i++) {
+            String paketMember =
+            daftarMember[i].getJenisPaket();
+
+            if (paketMember != null && paketMember.equalsIgnoreCase(paketCari)) {
+                System.out.println(daftarMember[i]);
+                paketDitemukan = true;
+            }
+         }
+
+         if (paketDitemukan) {
+            System.out.println("Filter paket berhasil.");
+         } else {
+            System.out.println("Tidak ada member dengan paket tersebut.");
+         }
+
     }
 }
