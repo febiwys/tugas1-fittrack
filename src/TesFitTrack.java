@@ -179,6 +179,22 @@ public class TesFitTrack {
         System.out.println("Paket VIP: " + jumlahVIP);
         System.out.println("Paket lainnya: " + jumlahLainnya);
 
+        System.out.println("\n=== BIAYA PAKET MEMBER ===");
+
+        int totalPendapatan = 0;
+
+        for (int i = 0; i < daftarMember.length; i++) {
+        int biaya = daftarMember[i].getBiayaPaket();
+
+        System.out.println(
+        daftarMember[i].getNama()
+        + " - Rp" + biaya);
+
+        totalPendapatan += biaya;
+        }
+
+        System.out.println("Total estimasi pendapatan: Rp" + totalPendapatan);
+
         // Menggunakan satu Scanner untuk semua input
         Scanner input = new Scanner(System.in);
 

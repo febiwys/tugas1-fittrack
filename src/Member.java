@@ -148,4 +148,33 @@ public class Member {
                 + ", Tanggal Daftar: " + tanggalDaftar
                 + ", Jenis Paket: " + jenisPaket;
     }
+
+    /**
+ * Memeriksa apakah data member sudah terisi lengkap.
+ *
+ * @return true jika seluruh data member terisi
+ */
+public boolean isDataLengkap() {
+    return nama != null && !nama.trim().isEmpty()
+        && noTelepon != null && !noTelepon.trim().isEmpty()
+        && tanggalDaftar != null && !tanggalDaftar.trim().isEmpty()
+        && jenisPaket != null && !jenisPaket.trim().isEmpty();
+  }
+
+  /**
+ * Mengambil biaya berdasarkan jenis paket member.
+ *
+ * @return biaya paket dalam rupiah
+ */
+public int getBiayaPaket() {
+    if ("Basic".equals(jenisPaket)) {
+        return 100000;
+    } else if ("Premium".equals(jenisPaket)) {
+        return 200000;
+    } else if ("VIP".equals(jenisPaket)) {
+        return 300000;
+    } else {
+        return 0;
+    }
+}
 }
