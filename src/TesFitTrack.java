@@ -157,6 +157,8 @@ public class TesFitTrack {
         // Mencetak seluruh member dengan perulangan for
         System.out.println("\n=== DAFTAR MEMBER FITTRACK ===");
         for (int i = 0; i < daftarMember.length; i++) {
+            System.out.println("\nMember ke-" + (i + 1));
+            System.out.println("_______________");
             System.out.println(daftarMember[i]);
         }
         System.out.println("\n == RINGKASAN MEMBER FITTRACK ===");
