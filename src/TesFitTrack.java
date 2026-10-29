@@ -299,6 +299,38 @@ public class TesFitTrack {
             System.out.println("Tidak ada member dengan paket tersebut.");
         }
 
+        //Mengubah status pembayaran member
+        System.out.println("\n=== UBAH STATUS PEMBAYARAN ===");
+        System.out.print("Masukkan nama member: ");
+
+        String namaPembayaran = input.nextLine().trim();
+        Member memberPembayaran = null;
+
+        for (Member member : daftarMember) {
+            if (member.getNama().equalsIgnoreCase(namaPembayaran) && member.isDataLengkap()) {
+                memberPembayaran = member;
+            }
+        }
+
+        if (memberPembayaran == null) {
+            System.out.println("Member tidak ditemukan atau datanya tidak lengkap.");
+        } else {
+            System.out.println("Mmeber tidak ditemukan!");
+            System.out.println("Paket: " + memberPembayaran.getJenisPaket());
+            System.out.println("Biaya: Rp" + memberPembayaran.getBiayaPaket());
+            System.out.println("Status saat ini: " + (memberPembayaran.isSudahBayar() ? "LUNAS" : "BELUM LUNAS"));
+
+            System.out.print("Tandai sebagai lunas? (ya/tidak): ");
+            String konfirmasi = input.nextLine().trim();
+
+            if (konfirmasi.equalsIgnoreCase("ya")) {
+                memberPembayaran.setSudahBayar(true);
+                System.out.println("Pembayaran berhasil diperbarui!");
+                System.out.println("Status baru: LUNAS");
+            } else {
+                System.out.println("Status pembayaran tidak diubah.");
+            }
+        }
         input.close();
     }
 }
