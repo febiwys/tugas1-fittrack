@@ -331,6 +331,33 @@ public class TesFitTrack {
                 System.out.println("Status pembayaran tidak diubah.");
             }
         }
+        
+        //Filter member berdasarkan status pembayaran
+System.out.println("\n=== FILTER STATUS PEMBAYARAN ===");
+System.out.print("Pilih status (LUNAS/BELUM LUNAS): ");
+
+String statusCari = input.nextLine().trim();
+int jumlahStatus = 0;
+
+if (statusCari.equalsIgnoreCase("LUNAS") || statusCari.equalsIgnoreCase("BELUM LUNAS")) {
+    System.out.println("\nDaftar member:");
+    for (Member member : daftarMember) {
+        if (!member.isDataLengkap()) {
+            continue;
+        }
+        boolean statusMember = member.isSudahBayar();
+        if ((statusCari.equalsIgnoreCase("LUNAS") && statusMember) || (statusCari.equalsIgnoreCase("BELUM LUNAS") && !statusMember)) {
+            jumlahStatus++;
+
+            System.out.println(jumlahStatus + " . " + member.getNama() + " . " + member.getJenisPaket() + " - Rp " + member.getBiayaPaket());
+             if (jumlahStatus == 0) {
+                System.out.println("Tidak ada member dengan status tersebut.");
+             } else {
+                System.out.println("Status tidak valid!");
+             }
+        }
+    }
+}
         input.close();
     }
 }
